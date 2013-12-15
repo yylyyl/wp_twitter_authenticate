@@ -10,7 +10,7 @@ function can_view_post(&$connection, $id, $selfname, $username)
 							wlog(date("Y-n-j H:i:s")." ".$_SERVER['REMOTE_ADDR']." post=".$id." auth_type=ifollow username=".$username." result=forbidden\n");
 							return false;
 						}
-						$t_follow=$connection->get('friendships/show',array('target_screen_name' => $selfname ,'source_screen_name' => $username));
+						$t_follow=$connection->get('friendships/show', array('target_screen_name' => $selfname, 'source_screen_name' => $username));
 						$result = $t_follow->relationship->target->following;
 						$resultstr = $result?"ok":"no";
 						wlog(date("Y-n-j H:i:s")." ".$_SERVER['REMOTE_ADDR']." post=".$id." auth_type=ifollow username=".$username." result=".$resultstr."\n");
@@ -41,7 +41,7 @@ function can_view_post(&$connection, $id, $selfname, $username)
 						wlog(date("Y-n-j H:i:s")." ".$_SERVER['REMOTE_ADDR']." post=".$id." auth_type=inlist username=".$username." result=".$resultstr."\n");
 						return $result;
 						
-		default:		wlog(date("Y-n-j H:i:s")." ".$_SERVER['REMOTE_ADDR']." post=".$id." auth_type=unknown username=".$username."result=no\n");
+		default:		wlog(date("Y-n-j H:i:s")." ".$_SERVER['REMOTE_ADDR']." post=".$id." auth_type=unknown username=".$username." result=no\n");
 						return false;
 		
 	}

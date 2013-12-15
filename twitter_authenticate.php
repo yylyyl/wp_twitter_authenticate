@@ -6,7 +6,7 @@
 Plugin Name: Twitter user authenticate
 Plugin URI: http://waiwaier.com/
 Description: only specific twitter users can view some of the articles
-Version: 0.1
+Version: 0.2
 Author: yylyyl
 Author URI: http://waiwaier.com/
 */
